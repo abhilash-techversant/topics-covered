@@ -78,3 +78,50 @@ Push to `main`. If you have a workflow set up, it will deploy automatically.
 
 - The app assumes the Excel file has sheets named "Main Topics" and "Sub Topics".
 - Columns used: `Topic`, `Documentation`, `Sub-Topics`, `Parent Topic`.
+
+## How to Update Topics & Subtopics
+
+### Step 1: Update the Excel File
+Simply edit your `Learning Time Frame.xlsx` file:
+- Add new rows to the "Main Topics" sheet
+- Add corresponding subtopics to the "Sub Topics" sheet
+- Save the file
+
+### Step 2: Update Links (Two Options)
+
+**Option A: Add links in the Excel file**
+- Put the Google Docs links in the "Documentation" column of the "Main Topics" sheet
+- The script will automatically pick them up
+
+**Option B: Hardcode links in the script**
+- Open `scripts/load_data.js`
+- Find the `LINK_OVERRIDES` object (around line 40-46)
+- Add your new topic and link:
+
+```javascript
+const LINK_OVERRIDES = {
+  "Basics of GenAI": "https://docs.google.com/...",
+  "Your New Topic": "https://docs.google.com/your-new-link"  // Add here
+};
+```
+
+### Step 3: Regenerate and Deploy
+
+Run these commands in order:
+
+```bash
+# 1. Regenerate the data from Excel
+node scripts/load_data.js
+
+# 2. Commit your changes
+git add .
+git commit -m "Updated topics and links"
+
+# 3. Push to GitHub
+git push origin main
+
+# 4. Deploy to GitHub Pages
+npm run deploy
+```
+
+Your site will update in 1-2 minutes at: https://abhilash-techversant.github.io/topics-covered/
