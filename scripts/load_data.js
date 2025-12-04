@@ -37,14 +37,6 @@ function loadData() {
         const subTopicsRaw = XLSX.utils.sheet_to_json(subSheet);
         console.log('Sub Topics Columns:', Object.keys(subTopicsRaw[0] || {}));
 
-        // Link Overrides (Hardcoded per user request)
-        // const LINK_OVERRIDES = {
-        //     "Basics of GenAI": "https://docs.google.com/document/d/1eFNvfXvnvg8zaVc7UnCYuoOeiRnccnxJzxsqXaaEkXQ/edit?usp=sharing",
-        //     "Postgres, Pgadmin4": "https://docs.google.com/document/d/1pD3BrnP6jJ-C0SQjvdDH9o_z3-dgqzY9emVP1GsYhSs/edit?usp=sharing",
-        //     "Docker": "https://docs.google.com/document/d/1HnhcFHjqWiHk4LkF_sZGLQpLyTqckk6zZYMqmtxf_dg/edit?usp=sharing",
-        //     "FastAPI": "https://docs.google.com/document/d/1O89BV4dYKDRRb-bW7dL0vIlIBumCMC38KXVjpw7uQcw/edit?usp=sharing",
-        //     "Git, Github": "https://docs.google.com/document/d/13SlpZbMJ52VxuuaGhp9Z7lY60it2GHCgS44sJsr6iWQ/edit?usp=sharing"
-        // };
 
         // Process Data
         const topics = mainTopicsRaw.map(row => {
