@@ -5,6 +5,20 @@ import { ChevronDown, ChevronUp, FileText, ExternalLink } from 'lucide-react';
 const TopicCard = ({ topic }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
+    // Function to get status badge color
+    const getStatusColor = (status) => {
+        if (!status) return 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300';
+        const statusLower = status.toLowerCase();
+        if (statusLower.includes('completed') || statusLower.includes('done')) {
+            return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400';
+        } else if (statusLower.includes('in progress') || statusLower.includes('ongoing')) {
+            return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400';
+        } else if (statusLower.includes('pending') || statusLower.includes('not started')) {
+            return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400';
+        }
+        return 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300';
+    };
+
     return (
         <motion.div
             layout
@@ -20,10 +34,17 @@ const TopicCard = ({ topic }) => {
                     <div className="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
                         <FileText size={20} />
                     </div>
-                    <div>
-                        <h3 className="font-semibold text-lg text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            {topic.title}
-                        </h3>
+                    <div className="flex-1">
+                        <div className="flex items-center gap-2 flex-wrap">
+                            <h3 className="font-semibold text-lg text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                {topic.title}
+                            </h3>
+                            {topic.overallStatus && (
+                                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${getStatusColor(topic.overallStatus)}`}>
+                                    {topic.overallStatus}
+                                </span>
+                            )}
+                        </div>
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                             {topic.subtopics.length} subtopics
                         </p>
@@ -65,9 +86,14 @@ const TopicCard = ({ topic }) => {
                                     initial={{ x: -10, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ delay: idx * 0.05 }}
-                                    className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm pl-2 border-l-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+                                    className="flex items-start justify-between gap-2 text-gray-600 dark:text-gray-300 text-sm pl-2 border-l-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
                                 >
-                                    <span className="py-1">{sub}</span>
+                                    <span className="py-1">{typeof sub === 'string' ? sub : sub.name}</span>
+                                    {typeof sub === 'object' && sub.status && (
+                                        <span className={`px-2 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${getStatusColor(sub.status)}`}>
+                                            {sub.status}
+                                        </span>
+                                    )}
                                 </motion.li>
                             ))}
                             {topic.subtopics.length === 0 && (

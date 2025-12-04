@@ -23,9 +23,10 @@ function App() {
     const term = searchTerm.toLowerCase();
     return topicsData.filter(topic => {
       const matchesTitle = topic.title.toLowerCase().includes(term);
-      const matchesSubtopic = topic.subtopics.some(sub =>
-        sub.toLowerCase().includes(term)
-      );
+      const matchesSubtopic = topic.subtopics.some(sub => {
+        const subName = typeof sub === 'string' ? sub : sub.name;
+        return subName.toLowerCase().includes(term);
+      });
       return matchesTitle || matchesSubtopic;
     });
   }, [searchTerm]);

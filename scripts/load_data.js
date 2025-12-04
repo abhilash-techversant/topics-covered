@@ -42,22 +42,22 @@ function loadData() {
         const topics = mainTopicsRaw.map(row => {
             const title = row['Topic'];
             let link = row['Documentation'];
-
-            // Apply override if exists
-            if (LINK_OVERRIDES[title]) {
-                link = LINK_OVERRIDES[title];
-            }
+            const overallStatus = row['Overall Status'];
 
             if (!title) return null;
 
             const subtopics = subTopicsRaw
                 .filter(sub => sub['Parent Topic'] === title)
-                .map(sub => sub['Sub-Topics'])
-                .filter(Boolean);
+                .map(sub => ({
+                    name: sub['Sub-Topics'],
+                    status: sub['Status']
+                }))
+                .filter(sub => sub.name);
 
             return {
                 title,
                 link: link || null,
+                overallStatus: overallStatus || null,
                 subtopics
             };
         }).filter(Boolean);

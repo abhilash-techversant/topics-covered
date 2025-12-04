@@ -2,71 +2,196 @@
   {
     "title": "Basics of GenAI",
     "link": "https://docs.google.com/document/d/1eFNvfXvnvg8zaVc7UnCYuoOeiRnccnxJzxsqXaaEkXQ/edit?usp=sharing",
+    "overallStatus": "Completed",
     "subtopics": [
-      "Foundations of AI & ML",
-      "Understanding GenAI",
-      "LLMs & Fine Tunings, Embeddings",
-      "Tools & Framework, Multimodal GenAI"
+      {
+        "name": "Foundations of AI & ML",
+        "status": "Completed"
+      },
+      {
+        "name": "Understanding GenAI",
+        "status": "Completed"
+      },
+      {
+        "name": "LLMs & Fine Tunings, Embeddings",
+        "status": "Completed"
+      },
+      {
+        "name": "Tools & Framework, Multimodal GenAI",
+        "status": "Completed"
+      }
     ]
   },
   {
     "title": "Postgres, Pgadmin4",
-    "link": "https://docs.google.com/document/d/1pD3BrnP6jJ-C0SQjvdDH9o_z3-dgqzY9emVP1GsYhSs/edit?usp=sharing",
+    "link": "https://docs.google.com/document/d/1eFNvfXvnvg8zaVc7UnCYuoOeiRnccnxJzxsqXaaEkXQ/edit?usp=sharing",
+    "overallStatus": "Completed",
     "subtopics": [
-      "postgres, Pgadmin4 installation",
-      "Understanding Titan DB",
-      "Refresh SQL Queries"
+      {
+        "name": "postgres, Pgadmin4 installation",
+        "status": "Completed"
+      },
+      {
+        "name": "Understanding Titan DB",
+        "status": "Completed"
+      },
+      {
+        "name": "Refresh SQL Queries",
+        "status": "Completed"
+      }
     ]
   },
   {
     "title": "Docker",
     "link": "https://docs.google.com/document/d/1HnhcFHjqWiHk4LkF_sZGLQpLyTqckk6zZYMqmtxf_dg/edit?usp=sharing",
+    "overallStatus": "Completed",
     "subtopics": [
-      "Introduction",
-      "Installation & Basics",
-      "Docker Images",
-      "Dockerfile",
-      "Working With Containers",
-      "Docker Volumes",
-      "Docker Networking",
-      "Docker Compose",
-      "Docker Registry"
+      {
+        "name": "Introduction",
+        "status": "Completed"
+      },
+      {
+        "name": "Installation & Basics",
+        "status": "Completed"
+      },
+      {
+        "name": "Docker Images",
+        "status": "Completed"
+      },
+      {
+        "name": "Dockerfile",
+        "status": "Completed"
+      },
+      {
+        "name": "Working With Containers",
+        "status": "Completed"
+      },
+      {
+        "name": "Docker Volumes",
+        "status": "Completed"
+      },
+      {
+        "name": "Docker Networking",
+        "status": "Completed"
+      },
+      {
+        "name": "Docker Compose",
+        "status": "Completed"
+      },
+      {
+        "name": "Docker Registry",
+        "status": "Completed"
+      }
     ]
   },
   {
     "title": "FastAPI",
     "link": "https://docs.google.com/document/d/1O89BV4dYKDRRb-bW7dL0vIlIBumCMC38KXVjpw7uQcw/edit?usp=sharing",
+    "overallStatus": "Completed",
     "subtopics": [
-      "Introduction",
-      "Installation & Setup",
-      "Basic API Endpoints",
-      "Pydantic Models",
-      "Dependency Injection",
-      "Path Operations",
-      "Request Handling",
-      "Error Handling",
-      "Authentication & Authorization",
-      "Middleware",
-      "Database Integration",
-      "Response Handling",
-      "Deployment"
+      {
+        "name": "Introduction",
+        "status": "Completed"
+      },
+      {
+        "name": "Installation & Setup",
+        "status": "Completed"
+      },
+      {
+        "name": "Basic API Endpoints",
+        "status": "Completed"
+      },
+      {
+        "name": "Pydantic Models",
+        "status": "Completed"
+      },
+      {
+        "name": "Dependency Injection",
+        "status": "Completed"
+      },
+      {
+        "name": "Path Operations",
+        "status": "Completed"
+      },
+      {
+        "name": "Request Handling",
+        "status": "Completed"
+      },
+      {
+        "name": "Error Handling",
+        "status": "Completed"
+      },
+      {
+        "name": "Authentication & Authorization",
+        "status": "Completed"
+      },
+      {
+        "name": "Middleware",
+        "status": "Completed"
+      },
+      {
+        "name": "Database Integration",
+        "status": "Completed"
+      },
+      {
+        "name": "Response Handling",
+        "status": "Completed"
+      },
+      {
+        "name": "Deployment",
+        "status": "Completed"
+      }
     ]
   },
   {
     "title": "Git, Github",
     "link": "https://docs.google.com/document/d/13SlpZbMJ52VxuuaGhp9Z7lY60it2GHCgS44sJsr6iWQ/edit?usp=sharing",
+    "overallStatus": "In Progress",
     "subtopics": [
-      "Introduction",
-      "Installation & Setup",
-      "Git Basics",
-      "Working With Files",
-      "Git Ignore",
-      "Working With Tags & Releases",
-      "Branching",
-      "GitHub Basics",
-      "Collaboration Basics",
-      "Undoing Mistakes (Essential Safety Skills)",
-      "Handling Merge Conflicts"
+      {
+        "name": "Introduction",
+        "status": "Completed"
+      },
+      {
+        "name": "Installation & Setup",
+        "status": "Completed"
+      },
+      {
+        "name": "Git Basics",
+        "status": "Completed"
+      },
+      {
+        "name": "Working With Files",
+        "status": "Completed"
+      },
+      {
+        "name": "Git Ignore",
+        "status": "Completed"
+      },
+      {
+        "name": "Working With Tags & Releases",
+        "status": "Completed"
+      },
+      {
+        "name": "Branching",
+        "status": "Completed"
+      },
+      {
+        "name": "GitHub Basics",
+        "status": "Completed"
+      },
+      {
+        "name": "Collaboration Basics",
+        "status": "In Progress"
+      },
+      {
+        "name": "Undoing Mistakes (Essential Safety Skills)",
+        "status": "Completed"
+      },
+      {
+        "name": "Handling Merge Conflicts",
+        "status": "Completed"
+      }
     ]
   }
 ]
