@@ -35,16 +35,9 @@ const TopicCard = ({ topic }) => {
                         <FileText size={20} />
                     </div>
                     <div className="flex-1">
-                        <div className="flex items-center gap-2 flex-wrap">
-                            <h3 className="font-semibold text-lg text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                                {topic.title}
-                            </h3>
-                            {topic.overallStatus && (
-                                <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${getStatusColor(topic.overallStatus)}`}>
-                                    {topic.overallStatus}
-                                </span>
-                            )}
-                        </div>
+                        <h3 className="font-semibold text-lg text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            {topic.title}
+                        </h3>
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                             {topic.subtopics.length} subtopics
                         </p>
@@ -52,6 +45,11 @@ const TopicCard = ({ topic }) => {
                 </div>
 
                 <div className="flex items-center gap-3">
+                    {topic.overallStatus && (
+                        <span className={`px-2 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${getStatusColor(topic.overallStatus)}`}>
+                            {topic.overallStatus}
+                        </span>
+                    )}
                     {topic.link && (
                         <a
                             href={topic.link}
